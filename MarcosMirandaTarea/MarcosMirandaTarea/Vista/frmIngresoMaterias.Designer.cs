@@ -1,6 +1,6 @@
 ﻿namespace MarcosMirandaTarea.Vista
 {
-    partial class frmMantenimientoMaterias
+    partial class frmIngresoMaterias
     {
         /// <summary>
         /// Required designer variable.

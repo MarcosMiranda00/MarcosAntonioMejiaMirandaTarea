@@ -102,11 +102,11 @@
     <Compile Include="Vista\frmIngresarNotasEst.Designer.cs">
       <DependentUpon>frmIngresarNotasEst.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\frmMantenimientoMaterias.cs">
+    <Compile Include="Vista\frmIngresoMaterias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\frmMantenimientoMaterias.Designer.cs">
-      <DependentUpon>frmMantenimientoMaterias.cs</DependentUpon>
+    <Compile Include="Vista\frmIngresoMaterias.Designer.cs">
+      <DependentUpon>frmIngresoMaterias.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\frmMenu.cs">
       <SubType>Form</SubType>
@@ -132,8 +132,8 @@
     <EmbeddedResource Include="Vista\frmIngresarNotasEst.resx">
       <DependentUpon>frmIngresarNotasEst.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\frmMantenimientoMaterias.resx">
-      <DependentUpon>frmMantenimientoMaterias.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\frmIngresoMaterias.resx">
+      <DependentUpon>frmIngresoMaterias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>

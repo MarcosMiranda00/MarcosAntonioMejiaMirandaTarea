@@ -25,7 +25,7 @@ namespace MarcosMirandaTarea.Vista
 
         private void mantenimientoDeMateriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMantenimientoMaterias MM = new frmMantenimientoMaterias();
+            frmIngresoMaterias MM = new frmIngresoMaterias();
             MM.Show();
         }
 

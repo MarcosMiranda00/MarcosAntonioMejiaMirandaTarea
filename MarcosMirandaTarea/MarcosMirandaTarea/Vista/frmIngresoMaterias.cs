@@ -12,9 +12,9 @@ using MarcosMirandaTarea.Vista;
 
 namespace MarcosMirandaTarea.Vista
 {
-    public partial class frmMantenimientoMaterias : Form
+    public partial class frmIngresoMaterias : Form
     {
-        public frmMantenimientoMaterias()
+        public frmIngresoMaterias()
         {
             InitializeComponent();
         }
