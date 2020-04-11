@@ -66,6 +66,39 @@ namespace MarcosMirandaTarea.Vista
 
             CargarDatos();
         }
-        
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            using (notasEstudiantesEntities db = new notasEstudiantesEntities())
+            {
+                string Id = dtvEstudiantes.CurrentRow.Cells[0].Value.ToString();
+                int Idc = int.Parse(Id);
+                est = db.estudiante.Where(verificarId => verificarId.id_estudiante == Idc).First();
+                est.nombre_estudiante = txtNombreEstudiante.Text;
+                est.apellido = txtApellido.Text;
+                est.contraseña = txtContraseña.Text;
+                est.usuario = txtUsuario.Text; 
+
+                db.Entry(est).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+            dtvEstudiantes.Rows.Clear();
+            limpiar();
+            CargarDatos();
+
+        }
+
+        private void dtvEstudiantes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string nombresEst = dtvEstudiantes.CurrentRow.Cells[1].Value.ToString();
+            string Apellido = dtvEstudiantes.CurrentRow.Cells[2].Value.ToString();
+            string Usuario = dtvEstudiantes.CurrentRow.Cells[3].Value.ToString();
+            string Contraseña = dtvEstudiantes.CurrentRow.Cells[4].Value.ToString();
+
+            txtNombreEstudiante.Text = nombresEst;
+            txtApellido.Text = Apellido;
+            txtUsuario.Text = Usuario;
+            txtContraseña.Text = Contraseña;
+        }
     }
 }

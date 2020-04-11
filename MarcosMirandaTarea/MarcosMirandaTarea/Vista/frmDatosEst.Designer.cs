@@ -42,6 +42,7 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvEstudiantes)).BeginInit();
             this.SuspendLayout();
@@ -49,18 +50,19 @@
             // btnActualizar
             // 
             this.btnActualizar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(17, 148);
+            this.btnActualizar.Location = new System.Drawing.Point(160, 150);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(106, 28);
             this.btnActualizar.TabIndex = 19;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(179, 148);
+            this.btnGuardar.Location = new System.Drawing.Point(17, 150);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(106, 28);
@@ -148,17 +150,22 @@
             // 
             // dtvEstudiantes
             // 
+            this.dtvEstudiantes.AllowUserToAddRows = false;
+            this.dtvEstudiantes.AllowUserToDeleteRows = false;
             this.dtvEstudiantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtvEstudiantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvEstudiantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Nombres,
             this.Apellido,
+            this.Usuario,
             this.Contraseña});
             this.dtvEstudiantes.Location = new System.Drawing.Point(17, 209);
             this.dtvEstudiantes.Name = "dtvEstudiantes";
+            this.dtvEstudiantes.ReadOnly = true;
             this.dtvEstudiantes.Size = new System.Drawing.Size(968, 262);
             this.dtvEstudiantes.TabIndex = 20;
+            this.dtvEstudiantes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvEstudiantes_CellClick);
             // 
             // Id
             // 
@@ -174,6 +181,11 @@
             // 
             this.Apellido.HeaderText = "Apellidos";
             this.Apellido.Name = "Apellido";
+            // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
             // 
             // Contraseña
             // 
@@ -221,6 +233,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
     }
 }
