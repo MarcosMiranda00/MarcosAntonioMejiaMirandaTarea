@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +55,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Logueo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Logueo.Designer.cs">
+      <DependentUpon>Logueo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\estudiante.cs">
+      <DependentUpon>NostasEstudiantes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\materia.cs">
+      <DependentUpon>NostasEstudiantes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NostasEstudiantes.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NostasEstudiantes.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NostasEstudiantes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NostasEstudiantes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\NostasEstudiantes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NostasEstudiantes.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\notas.cs">
+      <DependentUpon>NostasEstudiantes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>NostasEstudiantes.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\frmDatosEst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmDatosEst.Designer.cs">
+      <DependentUpon>frmDatosEst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmIngresarNotasEst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmIngresarNotasEst.Designer.cs">
+      <DependentUpon>frmIngresarNotasEst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmMantenimientoMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmMantenimientoMaterias.Designer.cs">
+      <DependentUpon>frmMantenimientoMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\frmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Logueo.resx">
+      <DependentUpon>Logueo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +126,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\frmDatosEst.resx">
+      <DependentUpon>frmDatosEst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmIngresarNotasEst.resx">
+      <DependentUpon>frmIngresarNotasEst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmMantenimientoMaterias.resx">
+      <DependentUpon>frmMantenimientoMaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\NostasEstudiantes.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NostasEstudiantes.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\NostasEstudiantes.edmx.diagram">
+      <DependentUpon>NostasEstudiantes.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,5 +159,21 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\NostasEstudiantes.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NostasEstudiantes.Context.cs</LastGenOutput>
+      <DependentUpon>NostasEstudiantes.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\NostasEstudiantes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NostasEstudiantes.edmx</DependentUpon>
+      <LastGenOutput>NostasEstudiantes.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
