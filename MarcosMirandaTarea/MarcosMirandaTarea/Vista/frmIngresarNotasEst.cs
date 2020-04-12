@@ -100,5 +100,19 @@ namespace MarcosMirandaTarea.Vista
             limpiar();
             CargarDatos();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            using (notasEstudiantesEntities db = new notasEstudiantesEntities())
+            {
+                string id = dtvNotas.CurrentRow.Cells[0].Value.ToString();
+                nots = db.notas.Find(int.Parse(id));
+                db.notas.Remove(nots);
+                db.SaveChanges();
+            }
+            dtvNotas.Rows.Clear();
+            limpiar();
+            CargarDatos();
+        }
     }
 }
