@@ -32,23 +32,25 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtvNotas = new System.Windows.Forms.DataGridView();
-            this.IdNotas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNota = new System.Windows.Forms.TextBox();
             this.txtIdMateria = new System.Windows.Forms.TextBox();
             this.txtIdEstudiante = new System.Windows.Forms.TextBox();
             this.lblNota = new System.Windows.Forms.Label();
             this.lblIdMateria = new System.Windows.Forms.Label();
             this.lblIdEstudiante = new System.Windows.Forms.Label();
+            this.IdNotas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEstudiantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtvNotas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(594, 246);
+            this.btnEliminar.Location = new System.Drawing.Point(556, 256);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 28);
@@ -60,7 +62,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(594, 190);
+            this.btnActualizar.Location = new System.Drawing.Point(556, 199);
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(100, 28);
@@ -72,7 +74,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(594, 131);
+            this.btnGuardar.Location = new System.Drawing.Point(556, 147);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(100, 28);
@@ -91,40 +93,18 @@
             this.IdNotas,
             this.NombreEstudiante,
             this.NombreMateria,
-            this.Nota});
+            this.Nota,
+            this.IDM,
+            this.idEstudiantes});
             this.dtvNotas.Location = new System.Drawing.Point(50, 147);
             this.dtvNotas.Margin = new System.Windows.Forms.Padding(2);
             this.dtvNotas.Name = "dtvNotas";
             this.dtvNotas.ReadOnly = true;
             this.dtvNotas.RowHeadersWidth = 51;
             this.dtvNotas.RowTemplate.Height = 24;
-            this.dtvNotas.Size = new System.Drawing.Size(472, 137);
+            this.dtvNotas.Size = new System.Drawing.Size(465, 137);
             this.dtvNotas.TabIndex = 20;
             this.dtvNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtvNotas_CellClick);
-            // 
-            // IdNotas
-            // 
-            this.IdNotas.HeaderText = "IdNotas";
-            this.IdNotas.MinimumWidth = 6;
-            this.IdNotas.Name = "IdNotas";
-            // 
-            // NombreEstudiante
-            // 
-            this.NombreEstudiante.HeaderText = "NombreEstudiante";
-            this.NombreEstudiante.MinimumWidth = 6;
-            this.NombreEstudiante.Name = "NombreEstudiante";
-            // 
-            // NombreMateria
-            // 
-            this.NombreMateria.HeaderText = "NombreMateria";
-            this.NombreMateria.MinimumWidth = 6;
-            this.NombreMateria.Name = "NombreMateria";
-            // 
-            // Nota
-            // 
-            this.Nota.HeaderText = "Nota";
-            this.Nota.MinimumWidth = 6;
-            this.Nota.Name = "Nota";
             // 
             // txtNota
             // 
@@ -136,6 +116,7 @@
             // 
             // txtIdMateria
             // 
+            this.txtIdMateria.Enabled = false;
             this.txtIdMateria.Location = new System.Drawing.Point(220, 64);
             this.txtIdMateria.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdMateria.Name = "txtIdMateria";
@@ -144,6 +125,7 @@
             // 
             // txtIdEstudiante
             // 
+            this.txtIdEstudiante.Enabled = false;
             this.txtIdEstudiante.Location = new System.Drawing.Point(50, 64);
             this.txtIdEstudiante.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdEstudiante.Name = "txtIdEstudiante";
@@ -183,11 +165,53 @@
             this.lblIdEstudiante.TabIndex = 13;
             this.lblIdEstudiante.Text = "Id Estudiante";
             // 
+            // IdNotas
+            // 
+            this.IdNotas.HeaderText = "IdNotas";
+            this.IdNotas.MinimumWidth = 6;
+            this.IdNotas.Name = "IdNotas";
+            this.IdNotas.ReadOnly = true;
+            // 
+            // NombreEstudiante
+            // 
+            this.NombreEstudiante.HeaderText = "NombreEstudiante";
+            this.NombreEstudiante.MinimumWidth = 6;
+            this.NombreEstudiante.Name = "NombreEstudiante";
+            this.NombreEstudiante.ReadOnly = true;
+            // 
+            // NombreMateria
+            // 
+            this.NombreMateria.HeaderText = "NombreMateria";
+            this.NombreMateria.MinimumWidth = 6;
+            this.NombreMateria.Name = "NombreMateria";
+            this.NombreMateria.ReadOnly = true;
+            // 
+            // Nota
+            // 
+            this.Nota.HeaderText = "Nota";
+            this.Nota.MinimumWidth = 6;
+            this.Nota.Name = "Nota";
+            this.Nota.ReadOnly = true;
+            // 
+            // IDM
+            // 
+            this.IDM.HeaderText = "IDM";
+            this.IDM.Name = "IDM";
+            this.IDM.ReadOnly = true;
+            this.IDM.Visible = false;
+            // 
+            // idEstudiantes
+            // 
+            this.idEstudiantes.HeaderText = "idEstudiantes";
+            this.idEstudiantes.Name = "idEstudiantes";
+            this.idEstudiantes.ReadOnly = true;
+            this.idEstudiantes.Visible = false;
+            // 
             // frmIngresarNotasEst
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 366);
+            this.ClientSize = new System.Drawing.Size(667, 366);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnGuardar);
@@ -213,15 +237,17 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView dtvNotas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdNotas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEstudiante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreMateria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
         private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.TextBox txtIdMateria;
         private System.Windows.Forms.TextBox txtIdEstudiante;
         private System.Windows.Forms.Label lblNota;
         private System.Windows.Forms.Label lblIdMateria;
         private System.Windows.Forms.Label lblIdEstudiante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdNotas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEstudiante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreMateria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nota;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEstudiantes;
     }
 }

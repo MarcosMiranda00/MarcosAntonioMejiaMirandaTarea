@@ -61,7 +61,7 @@
             // datosEstudiantesToolStripMenuItem
             // 
             this.datosEstudiantesToolStripMenuItem.Name = "datosEstudiantesToolStripMenuItem";
-            this.datosEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datosEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.datosEstudiantesToolStripMenuItem.Text = "Datos Estudiantes";
             this.datosEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.datosEstudiantesToolStripMenuItem_Click);
             // 
@@ -101,9 +101,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

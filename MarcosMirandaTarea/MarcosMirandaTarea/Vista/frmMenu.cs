@@ -20,18 +20,21 @@ namespace MarcosMirandaTarea.Vista
         private void datosEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDatosEst DE = new frmDatosEst();
+            DE.MdiParent = this;
             DE.Show();
         }
 
         private void mantenimientoDeMateriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmIngresoMaterias MM = new frmIngresoMaterias();
+            MM.MdiParent = this;
             MM.Show();
         }
 
         private void ingresarNotasDelEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmIngresarNotasEst NE = new frmIngresarNotasEst();
+            NE.MdiParent = this;
             NE.Show();
         }
     }

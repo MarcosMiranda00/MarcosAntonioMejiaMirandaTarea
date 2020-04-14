@@ -40,11 +40,14 @@ namespace MarcosMirandaTarea.Vista
                                     id = not7.id_notas,
                                     nombreEstudiante = estn.nombre_estudiante,
                                     materia = mat7.nombre_materia,
-                                    Nota = not7.notas1
+                                    Nota = not7.notas1,
+                                    IDMateria = mat7.id_materia,
+                                    IdEstudiante = estn.id_estudiante
+
                                 };
                 foreach (var iterar in innerjoin)
                 {
-                    dtvNotas.Rows.Add(iterar.id, iterar.nombreEstudiante, iterar.materia, iterar.Nota);
+                    dtvNotas.Rows.Add(iterar.id, iterar.nombreEstudiante, iterar.materia, iterar.Nota, iterar.IDMateria, iterar.IdEstudiante);
                 }
             }
         }
@@ -73,8 +76,8 @@ namespace MarcosMirandaTarea.Vista
 
         private void dtvNotas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string IdEstudiante = dtvNotas.CurrentRow.Cells[1].Value.ToString();
-            string IdMateria = dtvNotas.CurrentRow.Cells[2].Value.ToString();
+            string IdEstudiante = dtvNotas.CurrentRow.Cells[5].Value.ToString();
+            string IdMateria = dtvNotas.CurrentRow.Cells[4].Value.ToString();
             string Notas = dtvNotas.CurrentRow.Cells[3].Value.ToString();
 
             txtIdEstudiante.Text = IdEstudiante;

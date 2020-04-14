@@ -169,28 +169,33 @@
             // 
             // Id
             // 
-            this.Id.HeaderText = "Column1";
+            this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // Nombres
             // 
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
             // 
             // Apellido
             // 
             this.Apellido.HeaderText = "Apellidos";
             this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
             // 
             // Usuario
             // 
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
             // 
             // Contraseña
             // 
             this.Contraseña.HeaderText = "Contraseña";
             this.Contraseña.Name = "Contraseña";
+            this.Contraseña.ReadOnly = true;
             // 
             // frmDatosEst
             // 
